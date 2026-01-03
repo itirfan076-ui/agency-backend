@@ -11,7 +11,7 @@ app.use(express.json());
 // === ১. ডাটাবেস কনফিগারেশন (এখানে আপনার পাসওয়ার্ড দিন) ===
 // আপনার 'db_password' কেটে আসল পাসওয়ার্ডটি বসান
 const DB_USER = "isirfan076";
-const DB_PASS = "আপনার_ডাটাবেস_পাসওয়ার্ড";
+const DB_PASS = "IrfanBsc076";
 const DB_URI = `mongodb+srv://${DB_USER}:${DB_PASS}@cluster0.tlitxhv.mongodb.net/agencyDB?retryWrites=true&w=majority&appName=Cluster0`;
 
 mongoose.connect(DB_URI)
@@ -34,8 +34,8 @@ const Order = mongoose.model('Order', OrderSchema);
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'আপনার_জিমেইল@gmail.com',  // <--- এখানে আপনার জিমেইল বসান
-        pass: 'আপনার_অ্যাপ_পাসওয়ার্ড'     // <--- এখানে সেই ১৬ অক্ষরের অ্যাপ পাসওয়ার্ড বসান
+        user: 'kaabbobd22@gmail.com',  // <--- এখানে আপনার জিমেইল বসান
+        pass: 'qgju bwja brjr paze'     // <--- এখানে সেই ১৬ অক্ষরের অ্যাপ পাসওয়ার্ড বসান
     }
 });
 
@@ -51,7 +51,7 @@ app.post('/api/order', async (req, res) => {
         // খ. ইমেইল পাঠানো
         const mailOptions = {
             from: 'My Agency',
-            to: 'আপনার_রিসিভিং_ইমেইল@gmail.com', // যে ইমেইলে নোটিফিকেশন পেতে চান
+            to: 'kaabbobd22@gmail.com', // যে ইমেইলে নোটিফিকেশন পেতে চান
             subject: `New Order: ${serviceName}`,
             html: `
         <h3>New Order Received</h3>
@@ -80,4 +80,5 @@ app.get('/api/orders', async (req, res) => {
 });
 
 app.get('/', (req, res) => { res.send('Backend with DB is Running'); });
+
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
