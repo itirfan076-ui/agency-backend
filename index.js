@@ -11,7 +11,7 @@ app.use(express.json());
 // === ১. ডাটাবেস কনফিগারেশন (এখানে আপনার পাসওয়ার্ড দিন) ===
 // আপনার 'db_password' কেটে আসল পাসওয়ার্ডটি বসান
 const DB_USER = "isirfan076";
-const DB_PASS = "IrfanBsc076";
+const DB_PASS = "B63mJUAkvJw29Xx";
 const DB_URI = `mongodb+srv://${DB_USER}:${DB_PASS}@cluster0.tlitxhv.mongodb.net/agencyDB?retryWrites=true&w=majority&appName=Cluster0`;
 
 mongoose.connect(DB_URI)
@@ -82,3 +82,4 @@ app.get('/api/orders', async (req, res) => {
 app.get('/', (req, res) => { res.send('Backend with DB is Running'); });
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
